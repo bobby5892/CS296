@@ -25,6 +25,9 @@ namespace ComplaintDepartment.Controllers
             passwordHasher = passwordHash;
         }
 
+        // Generally, it'd be good to input some comments for a reviewer
+        // (I could use more comments on mine too).
+
         public ViewResult Index() => View(userManager.Users);
 
         public ViewResult Create() => View();
