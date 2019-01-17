@@ -9414,11 +9414,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\code\\CS296\\Lab 1\\ComplaintDepartment\\ComplaintTests\\ComplaintTests.csproj",
+      "projectUniqueName": "C:\\code\\CS296\\Lab 2\\ComplaintDepartment\\ComplaintTests\\ComplaintTests.csproj",
       "projectName": "ComplaintTests",
-      "projectPath": "C:\\code\\CS296\\Lab 1\\ComplaintDepartment\\ComplaintTests\\ComplaintTests.csproj",
+      "projectPath": "C:\\code\\CS296\\Lab 2\\ComplaintDepartment\\ComplaintTests\\ComplaintTests.csproj",
       "packagesPath": "C:\\Users\\Robert\\.nuget\\packages\\",
-      "outputPath": "C:\\code\\CS296\\Lab 1\\ComplaintDepartment\\ComplaintTests\\obj\\",
+      "outputPath": "C:\\code\\CS296\\Lab 2\\ComplaintDepartment\\ComplaintTests\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -9437,8 +9437,8 @@
       "frameworks": {
         "netcoreapp2.1": {
           "projectReferences": {
-            "C:\\code\\CS296\\Lab 1\\ComplaintDepartment\\ComplaintDepartment\\ComplaintDepartment.csproj": {
-              "projectPath": "C:\\code\\CS296\\Lab 1\\ComplaintDepartment\\ComplaintDepartment\\ComplaintDepartment.csproj"
+            "C:\\code\\CS296\\Lab 2\\ComplaintDepartment\\ComplaintDepartment\\ComplaintDepartment.csproj": {
+              "projectPath": "C:\\code\\CS296\\Lab 2\\ComplaintDepartment\\ComplaintDepartment\\ComplaintDepartment.csproj"
             }
           }
         }

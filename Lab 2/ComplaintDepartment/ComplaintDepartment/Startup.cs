@@ -15,6 +15,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore.SqlServer;
 using Microsoft.EntityFrameworkCore;
 using ComplaintDepartment.Models;
+using ComplaintDepartment.Infastructure;
 
 namespace ComplaintDepartment
     {
@@ -39,6 +40,12 @@ namespace ComplaintDepartment
 
             services.AddTransient<IComplaintRepository, ComplaintRepository>();
             services.AddTransient<ICommentRepository, CommentRepository>();
+
+            services.AddTransient<IPasswordValidator<AppUser>,
+              CustomPasswordValidator>();
+            services.AddTransient<IUserValidator<AppUser>,
+                CustomUserValidator>();
+
             services.AddDbContext<AppDBContext>(options => options.UseSqlServer(Configuration["ConnectionStrings:Local"]));
             services.AddIdentity<AppUser, IdentityRole>(opts => {
                 opts.User.RequireUniqueEmail = true;

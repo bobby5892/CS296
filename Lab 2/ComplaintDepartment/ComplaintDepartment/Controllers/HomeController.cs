@@ -7,8 +7,11 @@ using Microsoft.AspNetCore.Mvc;
 using ComplaintDepartment.Models;
 using ComplaintDepartment.Models.Repositories;
 using ComplaintDepartment.Models.View;
+using Microsoft.AspNetCore.Authorization;
+
 namespace ComplaintDepartment.Controllers
 {
+    [Authorize]
     public class HomeController : Controller
     {
         public ICommentRepository CommentRepo { get; set; }
@@ -19,6 +22,7 @@ namespace ComplaintDepartment.Controllers
             this.ComplaintRepo = complaintRepository;
 
         }
+        [Authorize(Roles = "member")]
         public IActionResult Index()
         {
             return View(new CommentsAndComplaints() {

@@ -12548,11 +12548,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\code\\CS296\\Lab 1\\ComplaintDepartment\\ComplaintDepartment\\ComplaintDepartment.csproj",
+      "projectUniqueName": "C:\\code\\CS296\\Lab 2\\ComplaintDepartment\\ComplaintDepartment\\ComplaintDepartment.csproj",
       "projectName": "ComplaintDepartment",
-      "projectPath": "C:\\code\\CS296\\Lab 1\\ComplaintDepartment\\ComplaintDepartment\\ComplaintDepartment.csproj",
+      "projectPath": "C:\\code\\CS296\\Lab 2\\ComplaintDepartment\\ComplaintDepartment\\ComplaintDepartment.csproj",
       "packagesPath": "C:\\Users\\Robert\\.nuget\\packages\\",
-      "outputPath": "C:\\code\\CS296\\Lab 1\\ComplaintDepartment\\ComplaintDepartment\\obj\\",
+      "outputPath": "C:\\code\\CS296\\Lab 2\\ComplaintDepartment\\ComplaintDepartment\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

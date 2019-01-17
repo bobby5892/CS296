@@ -6,9 +6,11 @@ using Microsoft.AspNetCore.Mvc;
 using ComplaintDepartment.Models;
 using ComplaintDepartment.Models.Repositories;
 using ComplaintDepartment.Models.View;
+using Microsoft.AspNetCore.Authorization;
+
 namespace ComplaintDepartment.Controllers
 {
-    
+    [Authorize]
     public class ComplaintController : Controller
     {
         public ICommentRepository CommentRepo { get; set; }
@@ -19,15 +21,18 @@ namespace ComplaintDepartment.Controllers
             this.ComplaintRepo = complaintRepository;
 
         }
+        [Authorize(Roles = "member")]
         public IActionResult Index()
         {
             return View();
         }
+        [Authorize(Roles = "member")]
         [HttpGet]
         public IActionResult Add()
         {
             return View();
         }
+        [Authorize(Roles = "member")]
         [HttpPost]
         public IActionResult Add(string contents)
         {
@@ -40,16 +45,19 @@ namespace ComplaintDepartment.Controllers
             this.ComplaintRepo.AddComplaint(newComplaint);
             return View("ComplaintAdded",newComplaint);
         }
+        [Authorize(Roles = "member")]
         public IActionResult List()
         {
             CommentsAndComplaints viewModel = new CommentsAndComplaints() { Comments = this.CommentRepo, Complaints = this.ComplaintRepo };
             return View(viewModel);
         }
+        [Authorize(Roles = "member")]
         [HttpGet]
         public IActionResult Search()
         {
             return View();
         }
+        [Authorize(Roles = "member")]
         [HttpPost]
         public IActionResult Search(string search)
         {
@@ -59,12 +67,13 @@ namespace ComplaintDepartment.Controllers
             }
             return View("SearchResults",this.ComplaintRepo.Search(search));
         }
-       
-      
+
+        [Authorize(Roles = "member")]
         public IActionResult Comment()
         {
             return View();
         }
+        [Authorize(Roles = "member")]
         public IActionResult GetComplaint(int id)
         {
             ComplaintAndComments complaintAndComments = new ComplaintAndComments()
@@ -74,10 +83,12 @@ namespace ComplaintDepartment.Controllers
             };
             return View(complaintAndComments);
         }
+        [Authorize(Roles = "member")]
         public JsonResult ToggleComplete(int id)
         {
             return Json(this.ComplaintRepo.ToggleComplete(id));
         }
+        [Authorize(Roles = "member")]
         public JsonResult AddComment(int id, string content)
         {
             return Json(
@@ -86,12 +97,14 @@ namespace ComplaintDepartment.Controllers
                     )
                 );
         }
+        [Authorize(Roles = "member")]
         public JsonResult DeleteCommentById(int id)
         {
             return Json(
                this.CommentRepo.DeleteCommentById(id)
             );
         }
+        [Authorize(Roles = "member")]
         public JsonResult DeleteComplaintByID(int id)
         {
             return Json(
@@ -99,6 +112,7 @@ namespace ComplaintDepartment.Controllers
                 this.ComplaintRepo.DeleteComplaintByID(id))
             );
         }
+        [Authorize(Roles = "member")]
         public JsonResult AddComplaint(string contents)
         {
             Complaint newComplaint = new Complaint()
@@ -110,10 +124,12 @@ namespace ComplaintDepartment.Controllers
             return Json(this.ComplaintRepo.AddComplaint(newComplaint));
            
         }
+        [Authorize(Roles = "member")]
         public JsonResult GetComplaints()
         {
             return Json(this.ComplaintRepo.Complaints.ToArray());
         }
+        [Authorize(Roles = "member")]
         public JsonResult GetComments()
         {
             return Json(this.CommentRepo.Comments.ToArray());
