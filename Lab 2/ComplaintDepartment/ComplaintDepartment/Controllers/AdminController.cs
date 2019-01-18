@@ -5,8 +5,11 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Identity;
 using ComplaintDepartment.Models;
+using Microsoft.AspNetCore.Authorization;
+
 namespace ComplaintDepartment.Controllers
 {
+    [Authorize]
     public class AdminController : Controller
     {
         private UserManager<AppUser> userManager;
@@ -24,11 +27,11 @@ namespace ComplaintDepartment.Controllers
             passwordValidator = passValid;
             passwordHasher = passwordHash;
         }
-
+        [Authorize(Roles = "admin")]
         public ViewResult Index() => View(userManager.Users);
-
+        [Authorize(Roles = "admin")]
         public ViewResult Create() => View();
-
+        [Authorize(Roles = "admin")]
         [HttpPost]
         public async Task<IActionResult> Create(Create model)
         {
@@ -56,7 +59,7 @@ namespace ComplaintDepartment.Controllers
             }
             return View(model);
         }
-
+        [Authorize(Roles = "admin")]
         [HttpPost]
         public async Task<IActionResult> Delete(string id)
         {
@@ -79,7 +82,7 @@ namespace ComplaintDepartment.Controllers
             }
             return View("Index", userManager.Users);
         }
-
+        [Authorize(Roles = "admin")]
         public async Task<IActionResult> Edit(string id)
         {
             AppUser user = await userManager.FindByIdAsync(id);
@@ -92,7 +95,7 @@ namespace ComplaintDepartment.Controllers
                 return RedirectToAction("Index");
             }
         }
-
+        [Authorize(Roles = "admin")]
         [HttpPost]
         public async Task<IActionResult> Edit(string id, string email,
                 string password)
@@ -143,7 +146,7 @@ namespace ComplaintDepartment.Controllers
             }
             return View(user);
         }
-
+        [Authorize(Roles = "admin")]
         private void AddErrorsFromResult(IdentityResult result)
         {
             foreach (IdentityError error in result.Errors)

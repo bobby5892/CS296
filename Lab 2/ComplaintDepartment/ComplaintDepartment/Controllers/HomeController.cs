@@ -22,7 +22,7 @@ namespace ComplaintDepartment.Controllers
             this.ComplaintRepo = complaintRepository;
 
         }
-        [Authorize(Roles = "member")]
+        [AllowAnonymous]
         public IActionResult Index()
         {
             return View(new CommentsAndComplaints() {

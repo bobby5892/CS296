@@ -64,7 +64,7 @@ using Microsoft.AspNetCore.Identity;
 #line default
 #line hidden
             BeginContext(93, 160, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "cbd86bcafea54272a5381e891c9d7be0", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "c44e0071d5944f3db3ed0e9e4541d0a4", async() => {
                 BeginContext(113, 133, true);
                 WriteLiteral("\r\n    <input type=\"text\" name=\"search\" placeholder=\"search for\" />\r\n    <input type=\"submit\" value=\"search\" class=\"btn-secondary\"/>\r\n");
                 EndContext();

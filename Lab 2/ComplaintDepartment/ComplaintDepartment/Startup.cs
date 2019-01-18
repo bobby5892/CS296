@@ -77,6 +77,8 @@ namespace ComplaintDepartment
             app.UseStaticFiles();
             app.UseCookiePolicy();
             app.UseAuthentication();
+            AppDBContext.CreateAdminAccount(app.ApplicationServices,
+            Configuration).Wait();
             app.UseMvc(routes =>
             {
                 //Custom route for getting single complaint

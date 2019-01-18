@@ -11,7 +11,7 @@ using ComplaintDepartment.Models;
 namespace ComplaintDepartment.Controllers
 {
           //https://github.com/Apress/pro-asp.net-core-mvc-2/blob/master/29%20-%20Applying%20Identity/Users/Users/Controllers/RoleAdminController.cs
-        [Authorize(Roles = "Admins")]
+        [Authorize(Roles = "admin")]
         public class RoleAdminController : Controller
         {
             private RoleManager<IdentityRole> roleManager;
@@ -46,8 +46,8 @@ namespace ComplaintDepartment.Controllers
                 }
                 return View(name);
             }
-
-            [HttpPost]
+        [Authorize(Roles = "admin")]
+        [HttpPost]
             public async Task<IActionResult> Delete(string id)
             {
                 IdentityRole role = await roleManager.FindByIdAsync(id);
@@ -69,8 +69,8 @@ namespace ComplaintDepartment.Controllers
                 }
                 return View("Index", roleManager.Roles);
             }
-
-            public async Task<IActionResult> Edit(string id)
+        [Authorize(Roles = "admin")]
+        public async Task<IActionResult> Edit(string id)
             {
 
                 IdentityRole role = await roleManager.FindByIdAsync(id);
@@ -89,8 +89,8 @@ namespace ComplaintDepartment.Controllers
                     NonMembers = nonMembers
                 });
             }
-
-            [HttpPost]
+        [Authorize(Roles = "admin")]
+        [HttpPost]
             public async Task<IActionResult> Edit(RoleModificationModel model)
             {
                 IdentityResult result;
