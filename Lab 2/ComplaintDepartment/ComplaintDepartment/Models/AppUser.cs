@@ -17,6 +17,7 @@ namespace ComplaintDepartment.Models
             RoleManager<IdentityRole> roleManager =
             serviceProvider.GetRequiredService<RoleManager<IdentityRole>>();
 
+            /* Create Admin Account */
             string username = configuration["Data:AdminUser:Name"];
             string email = configuration["Data:AdminUser:Email"];
             string password = configuration["Data:AdminUser:Password"];
@@ -40,6 +41,7 @@ namespace ComplaintDepartment.Models
                         await userManager.AddToRoleAsync(user, role);
                     }
             }
+         
         }
     }
 }

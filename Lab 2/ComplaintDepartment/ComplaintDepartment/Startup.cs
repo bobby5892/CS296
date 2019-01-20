@@ -45,8 +45,10 @@ namespace ComplaintDepartment
               CustomPasswordValidator>();
             services.AddTransient<IUserValidator<AppUser>,
                 CustomUserValidator>();
-
-            services.AddDbContext<AppDBContext>(options => options.UseSqlServer(Configuration["ConnectionStrings:Local"]));
+            //SQL SERVER
+            // services.AddDbContext<AppDBContext>(options => options.UseSqlServer(Configuration["ConnectionStrings:Local"]));
+            // Maria DB
+            services.AddDbContext<AppDBContext>(options => options.UseMySql(Configuration["ConnectionStrings:Local"]));
             services.AddIdentity<AppUser, IdentityRole>(opts => {
                 opts.User.RequireUniqueEmail = true;
                 //opts.User.AllowedUserNameCharacters = "abcdefghijklmnopqrstuvwxyz";

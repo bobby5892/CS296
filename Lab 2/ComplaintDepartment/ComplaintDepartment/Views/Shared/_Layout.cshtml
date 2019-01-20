@@ -17,6 +17,21 @@
             <li class="nav-item @ViewData["nav-add"]"><a href="/Complaint/Add" class="navbar-text">Add</a></li>
             <li class="nav-item @ViewData["nav-list"]"><a href="/Complaint/List" class="navbar-text">List</a></li>
             <li class="nav-item @ViewData["nav-search"]"><a href="/Complaint/Search" class="navbar-text">Search</a></li>
+            @if (User?.Identity?.IsAuthenticated ?? false)
+            {
+                @if (this.User.IsInRole("admin"))
+                {
+                    <a asp-controller="Admin" asp-action="Index" class="btn btn-danger">Admin Users</a>
+                    <a asp-controller="RoleAdmin" asp-action="Index" class="btn btn-danger">Admin Roles</a>
+                }
+                <a asp-controller="Account" asp-action="Logout"
+                   class="btn btn-danger">Logout</a>
+            }
+            else
+            {
+                <a asp-controller="Account" asp-action="Login"
+                   class="btn btn-danger">Login</a>
+            }
         </ul>
     </nav>
     <div class="container body-content">

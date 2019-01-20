@@ -20,6 +20,7 @@ namespace ComplaintDepartment
         public static IWebHost BuildWebHost(string[] args) =>
             WebHost.CreateDefaultBuilder(args)
             .UseStartup<Startup>()
+            //.UseUrls("https://lab2.cs296.eugeneprogramming.com/")
             .UseDefaultServiceProvider(options =>
             options.ValidateScopes = false)
             .Build();

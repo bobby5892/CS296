@@ -68,7 +68,7 @@ using Microsoft.AspNetCore.Identity;
             WriteLiteral("\r\n<div class=\"bg-primary m-1 p-1\"><h4>Roles</h4></div>\r\n\r\n");
             EndContext();
             BeginContext(92, 66, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("div", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "33cfd8b034804981849e8b7a07c84468", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("div", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "45e479c295f8449fac9eac75e5049001", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_TagHelpers_ValidationSummaryTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.ValidationSummaryTagHelper>();
@@ -143,12 +143,12 @@ WriteAttributeValue("", 588, role.Id, 588, 8, false);
             WriteLiteral("></td>\r\n                <td>\r\n                    ");
             EndContext();
             BeginContext(647, 413, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "cbecc6be96b54ecdafd6c0f0f01e6296", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "b86399b594b44b4d9ec020e6ffd08186", async() => {
                 BeginContext(711, 26, true);
                 WriteLiteral("\r\n                        ");
                 EndContext();
                 BeginContext(737, 112, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "e1532b5c1a7a4430be8c9a8f89d7c900", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "e79fde0ab48e4e7fbf8f4819f3fcb154", async() => {
                     BeginContext(841, 4, true);
                     WriteLiteral("Edit");
                     EndContext();
@@ -227,7 +227,7 @@ WriteAttributeValue("", 588, role.Id, 588, 8, false);
             WriteLiteral("</table>\r\n");
             EndContext();
             BeginContext(1132, 57, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "11afd8e928964d8298ede76be89a2ae0", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "93315c6988134f57b7d52e20e72fdae7", async() => {
                 BeginContext(1179, 6, true);
                 WriteLiteral("Create");
                 EndContext();
