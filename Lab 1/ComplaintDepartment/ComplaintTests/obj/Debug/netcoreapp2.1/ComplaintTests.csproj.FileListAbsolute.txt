@@ -1,0 +1,4 @@
+C:\code\CS296\Lab 1\ComplaintDepartment\ComplaintTests\obj\Debug\netcoreapp2.1\ComplaintTests.csprojAssemblyReference.cache
+C:\code\CS296\Lab 1\ComplaintDepartment\ComplaintTests\obj\Debug\netcoreapp2.1\ComplaintTests.csproj.CoreCompileInputs.cache
+C:\code\CS296\Lab 1\ComplaintDepartment\ComplaintTests\obj\Debug\netcoreapp2.1\ComplaintTests.AssemblyInfoInputs.cache
+C:\code\CS296\Lab 1\ComplaintDepartment\ComplaintTests\obj\Debug\netcoreapp2.1\ComplaintTests.AssemblyInfo.cs

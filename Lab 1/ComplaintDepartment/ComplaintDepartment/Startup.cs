@@ -39,7 +39,10 @@ namespace ComplaintDepartment
 
             services.AddTransient<IComplaintRepository, ComplaintRepository>();
             services.AddTransient<ICommentRepository, CommentRepository>();
-            services.AddDbContext<AppDBContext>(options => options.UseSqlServer(Configuration["ConnectionStrings:Local"]));
+            // FOR MSQL
+            //services.AddDbContext<AppDBContext>(options => options.UseSqlServer(Configuration["ConnectionStrings:Local"]));
+            // FOR Mysql
+            services.AddDbContext<AppDBContext>(options => options.UseMySql(Configuration["ConnectionStrings:Local"]));
             services.AddIdentity<AppUser, IdentityRole>(opts => {
                 opts.User.RequireUniqueEmail = true;
                 //opts.User.AllowedUserNameCharacters = "abcdefghijklmnopqrstuvwxyz";
