@@ -16,6 +16,10 @@ using Microsoft.EntityFrameworkCore.SqlServer;
 using Microsoft.EntityFrameworkCore;
 using ComplaintDepartment.Models;
 using ComplaintDepartment.Infastructure;
+using ComplaintDepartment.Infrastructure;
+using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authorization;
+using System.Security.Claims;
 
 namespace ComplaintDepartment
     {
@@ -45,10 +49,38 @@ namespace ComplaintDepartment
               CustomPasswordValidator>();
             services.AddTransient<IUserValidator<AppUser>,
                 CustomUserValidator>();
+
+            services.AddSingleton<IClaimsTransformation, LocationClaimsProvider>();
+            services.AddTransient<IAuthorizationHandler, BlockUsersHandler>();
+            services.AddTransient<IAuthorizationHandler, DocumentAuthorizationHandler>();
+
+            services.AddAuthorization(opts => {
+                opts.AddPolicy("DCUsers", policy => {
+                    policy.RequireRole("Users");
+                    policy.RequireClaim(ClaimTypes.StateOrProvince, "DC");
+                });
+                opts.AddPolicy("NotBob", policy => {
+                    policy.RequireAuthenticatedUser();
+                    policy.AddRequirements(new BlockUsersRequirement("Bob"));
+                });
+                opts.AddPolicy("AuthorsAndEditors", policy => {
+                    policy.AddRequirements(new DocumentAuthorizationRequirement
+                    {
+                        AllowAuthors = true,
+                        AllowEditors = true
+                    });
+                });
+            });
+
+            services.AddAuthentication().AddGoogle(opts => {
+                opts.ClientId = "<enter client id here>";
+                opts.ClientSecret = "<enter client secret here>";
+            });
+
             //SQL SERVER
-            // services.AddDbContext<AppDBContext>(options => options.UseSqlServer(Configuration["ConnectionStrings:Local"]));
+             services.AddDbContext<AppDBContext>(options => options.UseSqlServer(Configuration["ConnectionStrings:Local"]));
             // Maria DB
-            services.AddDbContext<AppDBContext>(options => options.UseMySql(Configuration["ConnectionStrings:Local"]));
+            //services.AddDbContext<AppDBContext>(options => options.UseMySql(Configuration["ConnectionStrings:Local"]));
             services.AddIdentity<AppUser, IdentityRole>(opts => {
                 opts.User.RequireUniqueEmail = true;
                 //opts.User.AllowedUserNameCharacters = "abcdefghijklmnopqrstuvwxyz";
