@@ -1,0 +1,25 @@
+C:\code\CS295-ASP\Term\ComplaintDepartment\ComplaintTests\bin\Debug\netcoreapp2.1\xunit.runner.visualstudio.dotnetcore.testadapter.dll
+C:\code\CS295-ASP\Term\ComplaintDepartment\ComplaintTests\bin\Debug\netcoreapp2.1\xunit.runner.reporters.netcoreapp10.dll
+C:\code\CS295-ASP\Term\ComplaintDepartment\ComplaintTests\bin\Debug\netcoreapp2.1\xunit.runner.utility.netcoreapp10.dll
+C:\code\CS295-ASP\Term\ComplaintDepartment\ComplaintTests\bin\Debug\netcoreapp2.1\ComplaintTests.deps.json
+C:\code\CS295-ASP\Term\ComplaintDepartment\ComplaintTests\bin\Debug\netcoreapp2.1\ComplaintTests.runtimeconfig.json
+C:\code\CS295-ASP\Term\ComplaintDepartment\ComplaintTests\bin\Debug\netcoreapp2.1\ComplaintTests.runtimeconfig.dev.json
+C:\code\CS295-ASP\Term\ComplaintDepartment\ComplaintTests\bin\Debug\netcoreapp2.1\ComplaintTests.dll
+C:\code\CS295-ASP\Term\ComplaintDepartment\ComplaintTests\bin\Debug\netcoreapp2.1\ComplaintTests.pdb
+C:\code\CS295-ASP\Term\ComplaintDepartment\ComplaintTests\obj\Debug\netcoreapp2.1\ComplaintTests.csprojAssemblyReference.cache
+C:\code\CS295-ASP\Term\ComplaintDepartment\ComplaintTests\obj\Debug\netcoreapp2.1\ComplaintTests.csproj.CoreCompileInputs.cache
+C:\code\CS295-ASP\Term\ComplaintDepartment\ComplaintTests\obj\Debug\netcoreapp2.1\ComplaintTests.AssemblyInfoInputs.cache
+C:\code\CS295-ASP\Term\ComplaintDepartment\ComplaintTests\obj\Debug\netcoreapp2.1\ComplaintTests.AssemblyInfo.cs
+C:\code\CS295-ASP\Term\ComplaintDepartment\ComplaintTests\obj\Debug\netcoreapp2.1\ComplaintTests.dll
+C:\code\CS295-ASP\Term\ComplaintDepartment\ComplaintTests\obj\Debug\netcoreapp2.1\ComplaintTests.pdb
+C:\code\CS295-ASP\Term\ComplaintDepartment\ComplaintTests\bin\Debug\netcoreapp2.1\ComplaintDepartment.Views.dll
+C:\code\CS295-ASP\Term\ComplaintDepartment\ComplaintTests\bin\Debug\netcoreapp2.1\ComplaintDepartment.Views.pdb
+C:\code\CS295-ASP\Term\ComplaintDepartment\ComplaintTests\bin\Debug\netcoreapp2.1\ComplaintDepartment.dll
+C:\code\CS295-ASP\Term\ComplaintDepartment\ComplaintTests\bin\Debug\netcoreapp2.1\ComplaintDepartment.pdb
+C:\code\CS295-ASP\Term\ComplaintDepartment\ComplaintTests\obj\Debug\netcoreapp2.1\ComplaintTests.csproj.CopyComplete
+C:\code\CS296\Lab 2\ComplaintDepartment\ComplaintTests\obj\Debug\netcoreapp2.1\ComplaintTests.csprojAssemblyReference.cache
+C:\code\CS296\Lab 2\ComplaintDepartment\ComplaintTests\obj\Debug\netcoreapp2.1\ComplaintTests.csproj.CoreCompileInputs.cache
+C:\code\CS296\Lab 2\ComplaintDepartment\ComplaintTests\obj\Debug\netcoreapp2.1\ComplaintTests.AssemblyInfoInputs.cache
+C:\code\CS296\Lab 2\ComplaintDepartment\ComplaintTests\obj\Debug\netcoreapp2.1\ComplaintTests.AssemblyInfo.cs
+C:\code\CS296\Lab 2\ComplaintDepartment\ComplaintTests\obj\Debug\netcoreapp2.1\ComplaintTests.dll
+C:\code\CS296\Lab 2\ComplaintDepartment\ComplaintTests\obj\Debug\netcoreapp2.1\ComplaintTests.pdb
