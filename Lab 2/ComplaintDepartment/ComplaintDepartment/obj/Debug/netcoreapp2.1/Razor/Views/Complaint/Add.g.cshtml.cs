@@ -70,7 +70,7 @@ using Microsoft.AspNetCore.Identity;
             WriteLiteral("<div class=\"addForm\">\r\n    ");
             EndContext();
             BeginContext(236, 223, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d3776b6a38184e4bbc0b9d20f4c8eab8", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "0fc4bda91e964a5d93265d5e061c9383", async() => {
                 BeginContext(256, 196, true);
                 WriteLiteral("\r\n        <label for=\"contents\">Add Complaint</label>\r\n        <br /><textarea name=\"contents\"></textarea>\r\n        <br /><input type=\"submit\" value=\"add complaint\" class=\"btn btn-primary\"/>\r\n    ");
                 EndContext();

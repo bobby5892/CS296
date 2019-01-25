@@ -87,3 +87,5 @@ C:\code\CS296\Lab 2\ComplaintDepartment\ComplaintDepartment\obj\Debug\netcoreapp
 C:\code\CS296\Lab 2\ComplaintDepartment\ComplaintDepartment\obj\Debug\netcoreapp2.1\Razor\Views\RoleAdmin\Create.g.cshtml.cs
 C:\code\CS296\Lab 2\ComplaintDepartment\ComplaintDepartment\obj\Debug\netcoreapp2.1\Razor\Views\RoleAdmin\Edit.g.cshtml.cs
 C:\code\CS296\Lab 2\ComplaintDepartment\ComplaintDepartment\obj\Debug\netcoreapp2.1\Razor\Views\RoleAdmin\Index.g.cshtml.cs
+C:\code\CS296\Lab 2\ComplaintDepartment\ComplaintDepartment\obj\Debug\netcoreapp2.1\ComplaintDepartment.csprojAssemblyReference.cache
+C:\code\CS296\Lab 2\ComplaintDepartment\ComplaintDepartment\obj\Debug\netcoreapp2.1\UserSecretsAssemblyInfo.cs
