@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit https://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAD7rN9sttbEadjgH5gZe60wAAAAACAAAAAAAQZgAAAAEAACAAAADG7ru+5ukuROMP5et2lvzBuNEnh5DrEWVXMVdPS3LYiQAAAAAOgAAAAAIAACAAAADCbzGGFqPORc4/yXjnY+Hqdroq+7KMFC+AbYeAVSQR9TAAAABrxuRcm+EUhmgUE/YUGsF7SCBfbn6dSkYHx0k8FbmlVe0IUUSff6ssjV48N5FXySRAAAAAO1mQjuq4XUDSayILPzFLV2zEXu6llPqEyQAF71ZqRdX6irQeMPKUaZUKkzYwZTRzX0rIWHIiZCPNF6COoR6gsg==</EncryptedPassword>
+    <_PublishTargetUrl>ftp://FTP.SITE4NOW.NET/site1</_PublishTargetUrl>
+  </PropertyGroup>
+  <ItemGroup>
+    <DestinationConnectionStrings Include="Local">
+      <Value>Server=%28localdb%29\MSSQLLocalDB%3bDatabase=Lab3%3bTrusted_Connection=True%3b MultipleActiveResultSets=true</Value>
+    </DestinationConnectionStrings>
+  </ItemGroup>
+  <ItemGroup>
+    <EFMigrations Include="ComplaintDepartment.Models.Repositories.AppDBContext">
+      <Value>Data Source=sql5004.site4now.net%3bInitial Catalog=DB_A456F2_moorerb%3bUser Id=DB_A456F2_moorerb_admin%3bPassword=1gotoschooltoday%3b</Value>
+    </EFMigrations>
+  </ItemGroup>
+</Project>

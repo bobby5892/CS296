@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit https://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAD7rN9sttbEadjgH5gZe60wAAAAACAAAAAAAQZgAAAAEAACAAAADGb3UBNko6KaQS/8Lm7LVg1MyAFUTd/LuFpMXHqwsBSAAAAAAOgAAAAAIAACAAAADgtUyE8O9uHjf4KegfYz+p55cEMKkSOeoioNIDkXq6yTAAAAA/IOzam4Plgvyt9e6pu5bdAbFiL/4fykNoWBM/BTy7MZhUb2d5BnAM4n2xXBR8Y0RAAAAA9f+aAxRtvyN5wiUvPcIB45rJ4Zn5Iymm14I1Uef0pZvCYdS+xompzuUNet1wpa9BHK42zLopOhgqNo9RP9G3kg==</EncryptedPassword>
+  </PropertyGroup>
+  <ItemGroup>
+    <DestinationConnectionStrings Include="Local">
+      <Value>Data Source=SQL5004.site4now.net%3bInitial Catalog=DB_A456F2_moorerb%3bUser Id=DB_A456F2_moorerb_admin%3bPassword=secret1111%3b</Value>
+    </DestinationConnectionStrings>
+  </ItemGroup>
+  <ItemGroup>
+    <EFMigrations Include="ComplaintDepartment.Models.Repositories.AppDBContext">
+      <Value>Data Source=SQL5004.site4now.net%3bInitial Catalog=DB_A456F2_moorerb%3bUser Id=DB_A456F2_moorerb_admin%3bPassword=secret1111%3b</Value>
+    </EFMigrations>
+  </ItemGroup>
+</Project>
