@@ -1,0 +1,13 @@
+﻿@model Complaint
+@{
+    ViewData["Title"] = "ComplaintAdded";
+}
+
+<h2>Complaint Added</h2>
+<p>Your complaint has been saved in the database.</p>
+<div class="complaint">
+    <div class="complaint-date">@Model.Create.ToLocalTime()</div>
+    <div class="complaint-contents">@Model.Contents</div>
+    
+</div>
+
