@@ -131,7 +131,7 @@
         $('.complaint-mark-comment').each((i, obj) => {
             /* check if bound already */
             
-            if (typeof (obj.onclick) == "object") {
+            if ((typeof (obj.onclick) == "object") && (obj.onclick === null)) {
                 console.log(".complaint-mark-comment:  " + typeof obj.onclick);
                 obj.addEventListener("click", () => {
                     // Show Add Comment Form
@@ -153,9 +153,9 @@
         */
         $('.complaint-details-button').each((i, obj) => {
              /* check if bound already */
-            
-            if (typeof (obj.onclick) == "object") {
-                console.log(".complaint-details-:  " + typeof obj.onclick);
+            console.log("XX.complaint-details-:  " + typeof(obj.onclick) + " vs " + obj.onclick);
+            if ((typeof(obj.onclick) == "object") && (obj.onclick == null)) {
+
                 console.log("I bound it");
                 obj.addEventListener("click", (() => {
                     console.log("I was clicked");
@@ -168,7 +168,7 @@
         $('.complaint-mark-icon').each((i, obj) => {
             console.log("Detected Mark Complete Button");
             /* check if bound already */
-            if (typeof obj.onclick == "object") {
+            if ((typeof (obj.onclick) == "object") && (obj.onclick == null)) {
                 obj.addEventListener("click", () => {
                     let id = obj.dataset["id"];
                     if (id.length > 0) {
@@ -186,7 +186,7 @@
         $('.delete-comment-button').each((i, obj) => {
             console.log("Detected Delete Comment Button");
             /* check if bound already */
-            if (typeof (obj.onclick) == "object") {
+            if ((typeof (obj.onclick) == "object") && (obj.onclick == null)) {
                 obj.addEventListener("click", () => {
                     let id = obj.dataset["id"];
                     if (id.length > 0) {
@@ -203,7 +203,7 @@
         $('.complaint-delete-button').each((i, obj) => {
             console.log("Detected Delete Complaint Button");
             /* check if bound already */
-            if (typeof (obj.onclick) == "object") {
+            if ((typeof (obj.onclick) == "object") && (obj.onclick == null)) {
                 obj.addEventListener("click", () => {
                     let id = obj.dataset["id"];
                     if (id.length > 0) {
@@ -218,10 +218,9 @@
         });
         /* Find close modal buttons */
         $('.closeModal').each((i, obj) => {
-            console.log("binding close Modal: " + obj.getEventListeners['click']);
+            console.log("binding close Modal: " + $(obj).data('events') );
             /* check if bound already */
-
-            if (typeof (obj.onclick) !== typeof(obj)) {
+            if ((typeof (obj.onclick) == "object") && (obj.onclick == null)) {
                 obj.addEventListener("click", (() => {
                     this.hideModal();
                 }).bind(this));
@@ -231,7 +230,7 @@
         $('.complaint-edit-button').each((i, obj) => {
             
             /* check if bound already */
-            if (typeof (obj.onclick) == "object") {
+            if ((typeof (obj.onclick) == "object") && (obj.onclick == null)) {
                 console.log("Binding for a comment button");
                 obj.addEventListener("click", (() => {
                     let id = obj.dataset["id"];
@@ -271,8 +270,9 @@
         });
         // Handle the add button
         $('.add-comment').each((i, obj) => {
-            console.log("Binding to a Add Button: " + typeof (obj.onclick));
-            if (typeof(obj.onclick) == "object") {
+            
+            if ((typeof (obj.onclick) == "object") && (obj.onclick == null)) {
+                console.log("Binding to a Add Button: " + typeof (obj.onclick));
                 obj.addEventListener("click", (() => {
                     let idComment = obj.dataset["id"];
                     let contents = document.getElementsByClassName("text-comment")[0].value;
