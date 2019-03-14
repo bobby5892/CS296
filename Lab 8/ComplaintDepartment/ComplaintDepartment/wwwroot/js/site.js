@@ -100,9 +100,11 @@
                                 </div>`
                            );
                         }
+                        // Bind the Comment Delete Buttons
                         this.bindEventsToButtons();
                     })
             }.bind(this)).then(() => {
+                /// Bind Comment Button
                 this.bindEventsToButtons();
             });     
         this.showModal();
@@ -128,11 +130,14 @@
         /* find Comment buttons */
         $('.complaint-mark-comment').each((i, obj) => {
             /* check if bound already */
-            if (typeof obj.onclick != "function") {
+            
+            if (typeof (obj.onclick) == "object") {
+                console.log(".complaint-mark-comment:  " + typeof obj.onclick);
                 obj.addEventListener("click", () => {
                     // Show Add Comment Form
                     let id = obj.dataset["id"];
                     complaint.showCommentForm(id);
+                    this.bindEventsToButtons();
                 });
             }
         });
@@ -148,8 +153,12 @@
         */
         $('.complaint-details-button').each((i, obj) => {
              /* check if bound already */
-            if (typeof obj.onclick != "function") {
+            
+            if (typeof (obj.onclick) == "object") {
+                console.log(".complaint-details-:  " + typeof obj.onclick);
+                console.log("I bound it");
                 obj.addEventListener("click", (() => {
+                    console.log("I was clicked");
                     let id = obj.dataset["id"];
                     this.showComplaint(id);
                 }).bind(this));
@@ -159,7 +168,7 @@
         $('.complaint-mark-icon').each((i, obj) => {
             console.log("Detected Mark Complete Button");
             /* check if bound already */
-            if (typeof obj.onclick != "function") {
+            if (typeof obj.onclick == "object") {
                 obj.addEventListener("click", () => {
                     let id = obj.dataset["id"];
                     if (id.length > 0) {
@@ -177,7 +186,7 @@
         $('.delete-comment-button').each((i, obj) => {
             console.log("Detected Delete Comment Button");
             /* check if bound already */
-            if (typeof obj.onclick != "function") {
+            if (typeof (obj.onclick) == "object") {
                 obj.addEventListener("click", () => {
                     let id = obj.dataset["id"];
                     if (id.length > 0) {
@@ -194,7 +203,7 @@
         $('.complaint-delete-button').each((i, obj) => {
             console.log("Detected Delete Complaint Button");
             /* check if bound already */
-            if (typeof obj.onclick != "function") {
+            if (typeof (obj.onclick) == "object") {
                 obj.addEventListener("click", () => {
                     let id = obj.dataset["id"];
                     if (id.length > 0) {
@@ -209,9 +218,10 @@
         });
         /* Find close modal buttons */
         $('.closeModal').each((i, obj) => {
-            console.log("binding");
+            console.log("binding close Modal: " + obj.getEventListeners['click']);
             /* check if bound already */
-            if (typeof obj.onclick != "function") {
+
+            if (typeof (obj.onclick) !== typeof(obj)) {
                 obj.addEventListener("click", (() => {
                     this.hideModal();
                 }).bind(this));
@@ -219,22 +229,27 @@
         });        
         /* Find edit modal buttons */
         $('.complaint-edit-button').each((i, obj) => {
+            
             /* check if bound already */
-            if (typeof obj.onclick != "function") {
+            if (typeof (obj.onclick) == "object") {
+                console.log("Binding for a comment button");
                 obj.addEventListener("click", (() => {
                     let id = obj.dataset["id"];
-                    console.log("edit" + id);
+                    console.log("clicking to show edit form" + id);
                     this.complaintID = id;
                     this.showEditForm();
                 }).bind(this));
+            }
+            else {
+                console.log("Skipping already bound");
             }
         });
 
         /* Setup for Focus out on edit complaint */
         $('.editing_a_complaint').each((i, obj) => {
             /* check if bound already */
-            console.log("bound an edit box");
-            if (typeof obj.onfocusout != "function") {
+            console.log("bound an edit box" + typeof (obj.onfocusout));
+            if (typeof (obj.onfocusout) == "undefined") {
                /* obj.addEventListener("onfocusout", (() => {
                     console.log("trying to hide");
                     this.hideEditForm();
@@ -244,6 +259,44 @@
                     this.hideEditForm();
                 });
 
+            }
+        });
+        // Bind the cancel button
+        $('.cancel-comment').each((i, obj) => {
+            obj.addEventListener("click", () => {
+                console.log("canceling");
+                let url = window.location.protocol + "//" + window.location.host + "/Complaint/Get/" + obj.dataset["id"];
+                location.replace(url);
+            });
+        });
+        // Handle the add button
+        $('.add-comment').each((i, obj) => {
+            console.log("Binding to a Add Button: " + typeof (obj.onclick));
+            if (typeof(obj.onclick) == "object") {
+                obj.addEventListener("click", (() => {
+                    let idComment = obj.dataset["id"];
+                    let contents = document.getElementsByClassName("text-comment")[0].value;
+                    // Don't do anything if its blank
+                    if (contents.length == 0) { console.log('skipped no contents'); return false; }
+                    let url = window.location.protocol + "//" + window.location.host + "/Complaint/AddComment?id=" + idComment + "&content=" + contents;
+                    console.log("CONTENTS - THAT SHOULD BE SENT" + contents);
+                    fetch(url, {
+                        method: "POST",
+                        body: JSON.stringify({
+                            id: idComment,
+                            content: contents
+                        })
+                    })
+                        .then(function (response) {
+                            return response.json();
+                        })
+                        .then(((myJson) => {
+                            console.log(JSON.stringify(myJson));
+                            //location.reload();
+                            this.hideModal();
+                            this.showComplaint(idComment);
+                        }).bind(this));
+                }));
             }
         });
                
@@ -338,46 +391,22 @@
     /* Show HTML Form for submitting a comment*/
     showCommentForm(id) {
         // would normall use a modal - but this is quick and dirty for an academic exercise
-        $("body").append(
-            `<div class='mask'>
-                <div class='addCommentform'>
-                        <span>Add Comment</span>
-                        <br>
-                        <textarea name="comment" class="text-comment"></textarea>
-                        <br>
-                        <button class="add-comment" data-id="${id}">add</button>
-                        <button class="cancel-comment" data-id="${id}">Cancel</button>
+        if (document.getElementsByClassName("text-comment").length == 0) {
+            $("body").append(
+                `<div class='mask'>
+                    <div class='addCommentform'>
+                            <span>Add Comment</span>
+                            <br>
+                            <textarea name="comment" class="text-comment"></textarea>
+                            <br>
+                            <button class="add-comment" data-id="${id}">add</button>
+                            <button class="cancel-comment" data-id="${id}">Cancel</button>
 
-                </div>
-            </div>`
-        );
-        // Bind the cancel button
-        $('.cancel-comment').each((i, obj) => {
-            obj.addEventListener("click", () => {
-                console.log("canceling");
-                let url = window.location.protocol + "//" + window.location.host + "/Complaint/Get/" + obj.dataset["id"];
-                location.replace(url);
-            });
-        });
-         // Handle the add button
-         $('.add-comment').each((i, obj) => {
-                obj.addEventListener("click", (() => {
-                    let url = window.location.protocol + "//" + window.location.host + "/Complaint/AddComment?id=" + id + "&content=" + $('.text-comment').val();
-                    console.log(url);
-                    fetch(url, {
-                        method: "POST"
-                    })
-                        .then(function (response) {
-                            return response.json();
-                        })
-                        .then( ((myJson) => {
-                            console.log(JSON.stringify(myJson));
-                            //location.reload();
-                            this.hideModal();
-                            this.showComplaint(id);
-                        }).bind(this));
-                }));
-         });
+                    </div>
+                </div>`
+            );
+        }
+        
     }
 }
 

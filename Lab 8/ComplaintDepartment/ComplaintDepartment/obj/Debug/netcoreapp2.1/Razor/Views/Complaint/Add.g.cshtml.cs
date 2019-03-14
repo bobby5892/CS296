@@ -65,7 +65,7 @@ using ComplaintDepartment.Models;
             WriteLiteral("<div class=\"addForm\">\r\n    ");
             EndContext();
             BeginContext(236, 223, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "8afb7848c5054a8fb1f039a3d72336e7", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "dc763254aa284780b947a97d4da07755", async() => {
                 BeginContext(256, 196, true);
                 WriteLiteral("\r\n        <label for=\"contents\">Add Complaint</label>\r\n        <br /><textarea name=\"contents\"></textarea>\r\n        <br /><input type=\"submit\" value=\"add complaint\" class=\"btn btn-primary\"/>\r\n    ");
                 EndContext();

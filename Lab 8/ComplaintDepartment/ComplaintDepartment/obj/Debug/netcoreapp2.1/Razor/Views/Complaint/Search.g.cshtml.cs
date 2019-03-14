@@ -59,7 +59,7 @@ using ComplaintDepartment.Models;
 #line default
 #line hidden
             BeginContext(93, 160, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "009e5e5744a8421497526e3056702336", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "815166bf93064df18cb94eae856a1f34", async() => {
                 BeginContext(113, 133, true);
                 WriteLiteral("\r\n    <input type=\"text\" name=\"search\" placeholder=\"search for\" />\r\n    <input type=\"submit\" value=\"search\" class=\"btn-secondary\"/>\r\n");
                 EndContext();
