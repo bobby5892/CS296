@@ -9,7 +9,6 @@
         
         $('.openComplaints').each((i, obj) => {
             // This only occurs if its on the page and we pre-determined their is only 1 so it doesn't get called more than once.
-
             let url = window.location.protocol + "//" + window.location.host + "/Complaint/GetComplaints";
             console.log(url);
             fetch(url, {
@@ -130,16 +129,14 @@
         /* find Comment buttons */
         $('.complaint-mark-comment').each((i, obj) => {
             /* check if bound already */
-            
-            if ((typeof (obj.onclick) == "object") && (obj.onclick === null)) {
-                console.log(".complaint-mark-comment:  " + typeof obj.onclick);
-                obj.addEventListener("click", () => {
-                    // Show Add Comment Form
-                    let id = obj.dataset["id"];
-                    complaint.showCommentForm(id);
-                    this.bindEventsToButtons();
-                });
-            }
+            //$(obj).unbind('click.namespace').bind('click.namespace', function () { });
+            $(obj).unbind('click.namespace').bind("click", () => {
+                // Show Add Comment Form
+                let id = obj.dataset["id"];
+                complaint.showCommentForm(id);
+                this.bindEventsToButtons();
+            });
+           
         });
         /* find Details buttons - Redirect Version */
         /*$('.complaint-details-button').each((i, obj) => {
@@ -153,23 +150,17 @@
         */
         $('.complaint-details-button').each((i, obj) => {
              /* check if bound already */
-            console.log("XX.complaint-details-:  " + typeof(obj.onclick) + " vs " + obj.onclick);
-            if ((typeof(obj.onclick) == "object") && (obj.onclick == null)) {
-
-                console.log("I bound it");
-                obj.addEventListener("click", (() => {
+            
+            $(obj).unbind('click.namespace').bind("click", () => {
                     console.log("I was clicked");
                     let id = obj.dataset["id"];
                     this.showComplaint(id);
-                }).bind(this));
-            }
+                });
+            
         });
         /* find Mark buttons - using jquery*/
         $('.complaint-mark-icon').each((i, obj) => {
-            console.log("Detected Mark Complete Button");
-            /* check if bound already */
-            if ((typeof (obj.onclick) == "object") && (obj.onclick == null)) {
-                obj.addEventListener("click", () => {
+            $(obj).unbind('click.namespace').bind("click", () => {
                     let id = obj.dataset["id"];
                     if (id.length > 0) {
                         complaint.markComplete(id);
@@ -178,16 +169,11 @@
                     else {
                         console.log("Invalid ID");
                     }
-
                 });
-            }
         });
         /* find Delete comment buttons */
         $('.delete-comment-button').each((i, obj) => {
-            console.log("Detected Delete Comment Button");
-            /* check if bound already */
-            if ((typeof (obj.onclick) == "object") && (obj.onclick == null)) {
-                obj.addEventListener("click", () => {
+            $(obj).unbind('click.namespace').bind("click", () => {
                     let id = obj.dataset["id"];
                     if (id.length > 0) {
                         complaint.deleteComment(id);
@@ -195,16 +181,11 @@
                     else {
                         console.log("Invalid ID");
                     }
-
                 });
-            }
         });
         /* Find delete complaint buttons */
         $('.complaint-delete-button').each((i, obj) => {
-            console.log("Detected Delete Complaint Button");
-            /* check if bound already */
-            if ((typeof (obj.onclick) == "object") && (obj.onclick == null)) {
-                obj.addEventListener("click", () => {
+            $(obj).unbind('click.namespace').bind("click", () => {
                     let id = obj.dataset["id"];
                     if (id.length > 0) {
                         complaint.deleteComplaint(id);
@@ -212,57 +193,40 @@
                     else {
                         console.log("Invalid ID");
                     }
-
                 });
-            }
         });
         /* Find close modal buttons */
         $('.closeModal').each((i, obj) => {
-            console.log("binding close Modal: " + $(obj).data('events') );
-            /* check if bound already */
-            if ((typeof (obj.onclick) == "object") && (obj.onclick == null)) {
-                obj.addEventListener("click", (() => {
+            $(obj).unbind('click.namespace').bind("click", () => {
                     this.hideModal();
-                }).bind(this));
-            }
+                });
         });        
         /* Find edit modal buttons */
         $('.complaint-edit-button').each((i, obj) => {
-            
-            /* check if bound already */
-            if ((typeof (obj.onclick) == "object") && (obj.onclick == null)) {
-                console.log("Binding for a comment button");
-                obj.addEventListener("click", (() => {
+            $(obj).unbind('click.namespace').bind("click", () => {
                     let id = obj.dataset["id"];
                     console.log("clicking to show edit form" + id);
                     this.complaintID = id;
                     this.showEditForm();
-                }).bind(this));
-            }
-            else {
-                console.log("Skipping already bound");
-            }
+                });
         });
 
         /* Setup for Focus out on edit complaint */
         $('.editing_a_complaint').each((i, obj) => {
-            /* check if bound already */
-            console.log("bound an edit box" + typeof (obj.onfocusout));
-            if (typeof (obj.onfocusout) == "undefined") {
-               /* obj.addEventListener("onfocusout", (() => {
-                    console.log("trying to hide");
-                    this.hideEditForm();
-                }).bind(this));
-                */
+            $(obj).unbind('click.namespace').bind("click", () => {
+                /* obj.addEventListener("onfocusout", (() => {
+                     console.log("trying to hide");
+                     this.hideEditForm();
+                 }).bind(this));
+                 */
                 $(obj).blur(() => {
                     this.hideEditForm();
                 });
-
-            }
+            });
         });
         // Bind the cancel button
         $('.cancel-comment').each((i, obj) => {
-            obj.addEventListener("click", () => {
+            $(obj).unbind('click.namespace').bind("click", () => {
                 console.log("canceling");
                 let url = window.location.protocol + "//" + window.location.host + "/Complaint/Get/" + obj.dataset["id"];
                 location.replace(url);
@@ -271,9 +235,7 @@
         // Handle the add button
         $('.add-comment').each((i, obj) => {
             
-            if ((typeof (obj.onclick) == "object") && (obj.onclick == null)) {
-                console.log("Binding to a Add Button: " + typeof (obj.onclick));
-                obj.addEventListener("click", (() => {
+            $(obj).unbind('click.namespace').bind("click", () => {
                     let idComment = obj.dataset["id"];
                     let contents = document.getElementsByClassName("text-comment")[0].value;
                     // Don't do anything if its blank
@@ -295,9 +257,8 @@
                             //location.reload();
                             this.hideModal();
                             this.showComplaint(idComment);
-                        }).bind(this));
-                }));
-            }
+                        }));
+                });
         });
                
     }

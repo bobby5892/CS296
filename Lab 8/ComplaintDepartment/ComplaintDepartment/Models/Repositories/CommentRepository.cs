@@ -62,10 +62,17 @@ namespace ComplaintDepartment.Models.Repositories
             });
             if (found)
             {
-                if (comment != null)
+                try { 
+                    if (comment != null)
+                    {
+                        this.context.Comments.Remove(comment);
+                        this.context.SaveChanges();
+                        return true;
+                    }
+                }
+                catch(Exception e)
                 {
-                    this.context.Comments.Remove(comment);
-                    this.context.SaveChanges();
+                    return false;
                 }
             }
             return false;
