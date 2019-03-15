@@ -19,6 +19,7 @@ namespace ComplaintDepartment
 
         public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
             WebHost.CreateDefaultBuilder(args)
+                .UseUrls("https://lab1.cs296.eugeneprogramming.com:5002/")
                 .UseStartup<Startup>();
     }
 }

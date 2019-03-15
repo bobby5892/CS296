@@ -1,0 +1,33 @@
+﻿@model ComplaintDepartment.Models.View.CommentsAndComplaints
+@{
+    ViewData["Title"] = "Home Page";
+    ViewData["nav-home"] = "active";
+}
+
+<p>Welcome to the complaint department!  Feel free to submit a complaint. No one will respond to it, but why not. </p>
+
+<h3>Some Useless Statistics</h3>
+<table>
+    <tr>
+        <td><b>Stat</b></td>
+        <td><b>Value</b></td>
+    </tr>
+    <tr>
+        <td>Total Number of Complaints</td>
+        <td>@Model.Complaints.Complaints.Count</td>
+    </tr>
+    <tr>
+        <td>Number of Open Complaints</td>
+        <td>@Model.Complaints.GetOpenComplaints().Count</td>
+    </tr>
+    <tr>
+        <td>Number of Closed Complaints</td>
+        <td>@Model.Complaints.GetClosedComplaints().Count</td>
+    </tr>
+    <tr>
+        <td>Total Number of Comments</td>
+        <td>@Model.Comments.Comments.Count</td>
+    </tr>
+</table>
+<br />
+<p>Be a statistic, submit a complaint now!</p>
