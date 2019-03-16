@@ -1,0 +1,276 @@
+﻿/* remove bootstrap crap*/
+
+body {
+    padding-bottom: 20px;
+}
+
+/* Wrapping element */
+/* Set some basic padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+.logo{
+    width:100%;
+    background-color:black;
+    padding-bottom:15px;
+    padding-left:10px;
+    padding-top:5px;
+}
+.navbar  li {
+    list-style-type: none;
+    padding-left:25px;
+    padding-right:25px;
+}
+.navbar-default {
+    background-color: #fcee21;
+    border-color: #00bcff;
+    margin-bottom:10px;
+}
+
+    .navbar-default .navbar-brand {
+        color: #000000;
+    }
+
+        .navbar-default .navbar-brand:hover,
+        .navbar-default .navbar-brand:focus {
+            color: #23004b;
+        }
+
+    .navbar-default .navbar-text {
+        color: #000000;
+    }
+
+    .navbar-default .navbar-nav > li > a {
+        color: #000000;
+    }
+
+        .navbar-default .navbar-nav > li > a:hover,
+        .navbar-default .navbar-nav > li > a:focus {
+            color: #23004b;
+        }
+
+    .navbar-default .navbar-nav > .active > a,
+    .navbar-default .navbar-nav > .active > a:hover,
+    .navbar-default .navbar-nav > .active > a:focus {
+        color: #23004b;
+        background-color: #00bcff;
+    }
+
+    .navbar-default .navbar-nav > .open > a,
+    .navbar-default .navbar-nav > .open > a:hover,
+    .navbar-default .navbar-nav > .open > a:focus {
+        color: #23004b;
+        background-color: #00bcff;
+    }
+
+    .navbar-default .navbar-toggle {
+        border-color: #00bcff;
+    }
+
+        .navbar-default .navbar-toggle:hover,
+        .navbar-default .navbar-toggle:focus {
+            background-color: #00bcff;
+        }
+
+        .navbar-default .navbar-toggle .icon-bar {
+            background-color: #000000;
+        }
+
+    .navbar-default .navbar-collapse,
+    .navbar-default .navbar-form {
+        border-color: #000000;
+    }
+
+    .navbar-default .navbar-link {
+        color: #000000;
+    }
+
+        .navbar-default .navbar-link:hover {
+            color: #23004b;
+        }
+
+@media (max-width: 767px) {
+    .navbar-default .navbar-nav .open .dropdown-menu > li > a {
+        color: #000000;
+    }
+
+        .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover,
+        .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
+            color: #23004b;
+        }
+
+    .navbar-default .navbar-nav .open .dropdown-menu > .active > a,
+    .navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover,
+    .navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus {
+        color: #23004b;
+        background-color: #00bcff;
+    }
+}
+/* Complaint Formatting */
+.complaint{
+    border-style:solid;
+    border-radius:10px;
+    border-width:3px;
+    border-color:black;
+    padding-left:25px;
+    padding-right:25px;
+    width:100%;
+    min-height:125px;
+    margin-top:5px;
+    margin-bottom:5px;
+}
+    .complaint > .complaint-date{
+        font-weight:bold;
+    }
+    .complaint > .complaint-contents {
+        text-align:justify;
+        padding-left:20px;
+        padding-right:20px;
+        
+    }
+    .complaint > .complaint-markcomplete {
+       
+        vertical-align:bottom;
+    }
+/*.complaint-mark-icon{
+
+}*/
+
+
+/* Add Form */
+.addForm  label{
+    font-weight:bold;
+    font-size:24pt;
+}
+.addForm  textarea {
+    min-width:600px;
+    min-height:250px;
+}
+/*.addForm  submit{
+
+}*/
+.complaint > .complaint-addcomment{
+    float:right;
+    padding-right:3px;
+}
+.complaint > .complaint-details{
+    float:right;
+}
+
+.mask {
+    
+    background-color: rgba(0,0,0,0.8);
+    z-index:1;
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+}
+.addCommentform{
+    z-index:2;
+    position:relative;
+    margin-left:50%;
+    margin-right:50%;
+    top:25%;
+    min-width:300px;
+    min-height:200px;
+    background-color:white;
+    border-radius:10px;
+    border-style:solid;
+    border-color:white;
+    border-width:3px;
+    padding-left:50px;
+
+}
+.addCommentform > span {
+    font-weight:bold;
+    padding-bottom:10px;
+}
+.addCommentform > textarea {
+    min-width:230px;
+    min-height:150px;
+}
+
+.comments {
+    border-style: dotted;
+    border-color: gray;
+    border-width: 2px;
+    max-width: 490px;
+}
+.comment {
+    border-style:solid;
+    border-color:black;
+    border-width:1px;
+    padding-left:10px;
+    padding-right:10px;
+    margin-left:10px;
+    max-width:490px;
+    margin-bottom:5px;
+    margin-top:5px;
+}
+.comment > span{
+    font-weight:bold;
+}
+.comment > p{
+    text-align:justify;
+}
+.comment > button{
+    
+    left:75%;
+    padding-bottom:5px;
+}
+
+.mask {
+    z-index: 5;
+    background: rgba(0, 0, 0, 0.4);
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width:100%;
+    height:100%;
+}
+.closeModal {
+    border-color: gray;
+    border-style: solid;
+    padding: 5px 5px 5px 5px;
+    width: 20px;
+    height: 25px;
+    margin-left: auto;
+    cursor: pointer;
+    margin-top: 5px;
+    margin-right: 5px;
+    line-height: 25px;
+    vertical-align: text-top;
+    box-sizing:content-box;
+    text-align:center;
+    font-weight:bold;
+    font-size:1.5em;
+}
+/* override bootstrap crap stuff*/
+    .closeModal ::after {
+        box-sizing: content-box;
+    }
+.modaler {
+    z-index: 6;
+    position: fixed;
+    top: 20%;
+    left: 20%;
+    border-width: 5px;
+    border-radius: 10px;
+    border-color: black;
+    width: 50%;
+    height: 50%;
+    background-color: white;
+    min-width: 500px;
+    overflow:auto;
+}
+
+.comments{
+    margin-top:60px;
+
+}
+.editing_a_complaint{
+    min-width:400px;
+}

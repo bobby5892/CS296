@@ -1,0 +1,45 @@
+﻿@model ComplaintDepartment.Models.View.CommentsAndComplaints
+@{
+    ViewData["nav-list"] = "active";
+    ViewData["Title"] = "List Complaints";
+}
+<h2>Open Complaints</h2>
+<div class="openComplaints">
+    @{
+        /*      if (Model.Complaints.Complaints.Count == 0)
+              {
+                  <div> No Complaints Found</div>
+              }
+          }
+
+
+          @if (Model.Complaints.Complaints.Count != 0)
+          {
+              @foreach (var complaint in Model.Complaints.GetOpenComplaints())
+              {
+                  <div class="complaint">
+                      <div class="complaint-date">@complaint.Create.ToLocalTime()</div>
+                      <div class="complaint-contents">@complaint.Contents</div>
+                      <div class="complaint-details"><button class="complaint-details-button btn btn-primary" data-id="@complaint.ID">Details</button></div>
+                  </div>
+              }
+          */}
+</div>
+<h2>Closed Complaints</h2>
+<div class="closedComplaints">
+    @{
+        // var complaints = Model.Complaints.GetClosedComplaints();
+    }
+    @{/* if (complaints.Count != 0)
+          {
+          <h2>Closed Complaints</h2>
+          @foreach (var complaint in complaints)
+          {
+          <div class="complaint">
+              <div class="complaint-date">@complaint.Create.ToLocalTime()</div>
+              <div class="complaint-contents">@complaint.Contents</div>
+              <div class="complaint-details"><button class="complaint-details-button btn btn-outline-primary" data-id="@complaint.ID">Details</button></div>
+          </div>
+          }
+      */}
+</div>
